@@ -92,6 +92,10 @@ for dwi_mha_file in $dwi_mha_files; do
         --mask $tractseg_dir/nodif_brain_mask.nii.gz \
         $nifti_file $bval_path $bvec_path -f
 
+    fslmaths $metric_dir/md.nii.gz -mul 1000 $metric_dir/md.nii.gz
+    fslmaths $metric_dir/ad.nii.gz -mul 1000 $metric_dir/ad.nii.gz
+    fslmaths $metric_dir/rd.nii.gz -mul 1000 $metric_dir/rd.nii.gz
+
     echo "Sampling scalar maps along bundles..."
     profile_dir="${output_dir}/${basename}/profiles"
     mkdir -p $profile_dir
