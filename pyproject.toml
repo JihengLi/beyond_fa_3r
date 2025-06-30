@@ -1,0 +1,17 @@
+[project]
+name = "beyond_fa_3r"
+version = "0.0.1"
+description = "Beyond FA challenge."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "scilpy",
+    "simpleitk>=2.4.1",
+    "torch>=2.6.0",
+    "tractseg>=2.9",
+    "numpy",
+    "pathlib"
+]
+
+[tool.uv.sources]
+scilpy = { git = "https://github.com/scilus/scilpy.git" }
